@@ -224,9 +224,21 @@ class _TransactionPageState extends State<TransactionPage> {
                   ),
                 ),
                 const DetailsDivider(),
-                AddNote()
+                Padding(
+                  padding: const EdgeInsets.only(left: 16, top: 5),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text("Routing Number", style: ThemeStyles.otherDetailsSecondary,),
+                      const SizedBox(height: 5.0,),
+                      Text("565439283744638", style: ThemeStyles.otherDetailsPrimary,)
+                    ],
+                  ),
+                ),
+                const DetailsDivider(),
               ],
-            )
+            ),
+            AddNote(),
           ],
         ),
       )
