@@ -1,4 +1,5 @@
 import 'package:bank_app/screens/home_screen.dart';
+import 'package:bank_app/utils/theme_colors.dart';
 import 'package:bank_app/utils/theme_styles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -37,7 +38,8 @@ class _HomeWidgetState extends State<HomeWidget> {
         currentIndex: selectedIndex,
         selectedItemColor: Colors.black,
         unselectedItemColor: Colors.grey,
-        selectedLabelStyle: ThemeStyles.otherDetailsSecondary,
+        selectedLabelStyle: TextStyle(fontFamily: 'Raleway', color: ThemeColors.black, fontSize: 10),
+        unselectedLabelStyle: TextStyle(fontFamily: 'Raleway', color: ThemeColors.grey, fontSize: 10),
         showSelectedLabels: true,
         showUnselectedLabels: true,
         onTap: onTabTapped,
@@ -46,7 +48,8 @@ class _HomeWidgetState extends State<HomeWidget> {
               icon: Container(
                 width: 20,
                 height: 20,
-                child: SvgPicture.asset("assets/images/home-50.svg"),
+                child: SvgPicture.asset("assets/images/home-50.svg",
+                  color: selectedIndex == 0 ? ThemeColors.black : ThemeColors.grey,),
               ),
               label: "Home",
           ),
@@ -54,7 +57,8 @@ class _HomeWidgetState extends State<HomeWidget> {
               icon: Container(
                 width: 20,
                 height: 20,
-                child: SvgPicture.asset("assets/images/transaction.svg"),
+                child: SvgPicture.asset("assets/images/transaction.svg",
+                  color: selectedIndex == 1 ? ThemeColors.black : ThemeColors.grey,),
               ),
               label: "Transactions"
           ),
@@ -62,7 +66,8 @@ class _HomeWidgetState extends State<HomeWidget> {
               icon: Container(
                 width: 20,
                 height: 20,
-                child: SvgPicture.asset("assets/images/settings.svg"),
+                child: SvgPicture.asset("assets/images/settings.svg",
+                  color: selectedIndex == 2 ? ThemeColors.black : ThemeColors.grey,),
               ),
               label: "Settings"
           ),
@@ -70,9 +75,10 @@ class _HomeWidgetState extends State<HomeWidget> {
               icon: Container(
                 width: 20,
                 height: 20,
-                child: SvgPicture.asset("assets/images/account.svg"),
+                child: SvgPicture.asset("assets/images/account.svg",
+                  color: selectedIndex == 3 ? ThemeColors.black : ThemeColors.grey,),
               ),
-              label: "Account"
+              label: "Account",
           ),
         ],
       ),
